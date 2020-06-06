@@ -15,8 +15,8 @@ const double XBeg = 0.5;
 const double XEnd = 1.5;
 const double dX = 0.05;
 
-double XMin = DBL_MIN;
-double XMax = DBL_MAX;
+double ZMin = DBL_MAX;
+double ZMax = DBL_MIN;
 
 int comp_acc = 3;
 
@@ -42,26 +42,35 @@ int main()
 
 	cout << endl << "First function:" << endl;
 
-	while ((XNow < A or is_double_equal(XNow, A)) and (XNow < XEnd)){
+	while ((XNow < A or is_double_equal(XNow, A)) and (XNow < XEnd or is_double_equal(XNow, XEnd))){
 		Z = abs(XNow);
+		if (Z < ZMin) ZMin = Z;
+		if (Z > ZMax) ZMax = Z;
 		cout << "X: " << XNow << "\t" << "Z: " << Z << endl;
 		XNow += dX;
 	}
 
 	cout << endl << "Second function: " << endl;
 
-	while ((XNow < B) and (XNow < XEnd)){
+	while ((XNow < B) and (XNow < XEnd or is_double_equal(XNow, XEnd))){
 		Z = abs(XNow) + cos(XNow);
+		if (Z < ZMin) ZMin = Z;
+		if (Z > ZMax) ZMax = Z;
 		cout << "X: " << XNow << "\t" << "Z: " << Z << endl;
 		XNow += dX;
 	}
 
 	cout << endl << "Third function:" << endl;
 
-	while ( (XNow > B or is_double_equal(XNow, B)) and (XNow < XEnd)){
+	while ( (XNow > B or is_double_equal(XNow, B)) and ( XNow < XEnd or is_double_equal(XNow, XEnd) )){
 		Z = tan(XNow);
+		if (Z < ZMin) ZMin = Z;
+		if (Z > ZMax) ZMax = Z;
 		cout << "X: " << XNow << "\t" << "Z: " << Z << endl;
 		XNow += dX;
 	}
+
+	cout << endl << "ZMin: " << ZMin;
+	cout << endl << "ZMax: " << ZMax;
 	
 }
