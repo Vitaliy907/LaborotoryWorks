@@ -107,14 +107,7 @@ struct human_data {
 };
 int main()
 {
-	//human_data data;
-	//human_data* ptr=&data;
-	//data.PassengerId = 2;
-	//data.Survived = true;
-	//data.Pclass = 1;
-	//cout << *ptr << *ptr + 1 << &ptr + 2;
-	////cin >> data.Parch;
-//	string to_str(&) {}
+
 	int i = 0, counter_surv_male=0,counter_surv = 0;
 	vector<human_data> data_human;
 	human_data temp_data;
@@ -124,15 +117,7 @@ int main()
 	string str;
 	while (trainScv.get(ch)) {
 		if (ch == '"')continue;
-		//if ((temp[0] == '"') && (temp[1] == '"')) {
-		//	if ((temp[temp.length()-2] == '"') &&(temp.length()!=2)&& (temp[temp.length() - 1] == '"')) {
-		//		cout << temp << "\n";
-		//		data_human[counter].set_data(i, temp);
-		//		i++;
-		//		temp = "";
-		//		continue;
-		//	}
-		//}
+
 		else if ((ch == ',')) {
 			temp_data.set_data(i, temp);
 			temp = "";
