@@ -39,13 +39,8 @@ string prepare_number(double number){
 weather_day get_day(json dayobject){
 	weather_day current_day;
 	current_day.date = dayobject["dt_txt"].get<string>().substr(0, dayobject["dt_txt"].get<string>().find(" "));
-	try {		
-		current_day.temp = prepare_number(dayobject["main"]["temp"].get<double>());
-		current_day.icon = dayobject["weather"][0]["icon"].get<string>();
-	}
-	catch (nlohmann::detail::type_error ex) {
-		cout << ex.what() << endl;
-	}
+	current_day.temp = prepare_number(dayobject["main"]["temp"].get<double>());
+	current_day.icon = dayobject["weather"][0]["icon"].get<string>();
 	return current_day;
 }
 
