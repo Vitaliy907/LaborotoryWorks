@@ -46,15 +46,21 @@
 
 <img src="resources/1.png">
 
+*Рис. 1. Система уравнений*
+
 ## Вывод в консоль
 
 <img src="resources/2.png" height="400px">
+
+*Рис. 2. Вывод решения*
 
 ## График функции
 
 График также доступен [по этой ссылке](https://www.desmos.com/calculator/zqoh02zjbq)
 
 <img src="resources/3.png" height="500px">
+
+*Рис. 3. Полученный график*
 
 ## Исходный код программы
 
